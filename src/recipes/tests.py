@@ -27,7 +27,13 @@ class RecipeModelTest(TestCase):
     
     def test_get_absolute_url(self):
         recipe = Recipe.objects.get(id=1)
+        self.assertEqual(recipe.get_absolute_url(), '/list/1')
+    
+    def test_difficulty_calculation(self):
+        recipe = Recipe.objects.get(id=1)
         self.assertEqual(recipe.calculate_difficulty(), 'Easy')
+
+
 
 
 '''class RecipesSearchFormTest(TestCase):
