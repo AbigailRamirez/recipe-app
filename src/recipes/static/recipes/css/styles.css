@@ -8,7 +8,7 @@
 .recipe_grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    padding: 23px 0 23px 23px;
+    padding: 23px 23px 23px 23px;
     grid-gap: 23px;
     background: rgba(0, 0, 0, 0.5);
     width: 75vw;
