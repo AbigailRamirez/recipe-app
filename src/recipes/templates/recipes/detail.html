@@ -1,8 +1,17 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
         <title>RecipeApp Details</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="{% static 'recipes/images/favicon.png' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'recipes/css/styles.css' %}">
+        <style type="text/css">
+            body {
+                background: url("{% static 'recipes/images/home_background.jpg' %}") no-repeat fixed;
+                background-size: cover;
+            }
+        </style>
     </head>
     <body>
         <div class="details_modal">
@@ -13,6 +22,12 @@
                     <b>Cooking Time (min): </b> {{object.cooking_time}} <br>
                     <b>Difficulty: </b> {{object.calculate_difficulty}} <br><br>
                     <img class="recipe_images" src="{{object.pic.url}}"/>
+                </div>
+
+                <div class="details_long">
+                    <b>Ingredients: </b> {{object.ingredients}} <br><br>
+                    <b>Description: </b> {{object.description}} <br><br>
+
                 </div>
             </div>
         </div>

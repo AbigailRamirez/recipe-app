@@ -1,12 +1,21 @@
 
 <!DOCTYPE html>
-{% load static %}
+
 <html lang="en">
     <head>
         <title>
             RecipeApp Recipes
         </title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% load static %}
+        <link rel="shortcut icon" href="{% static 'recipes/images/favicon.png' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'recipes/css/styles.css' %}">
+        <style type="text/css">
+            body {
+                background: url("{% static 'recipes/images/home_background.jpg' %}") no-repeat fixed;
+                background-size: cover;
+            }
+        </style>
         
     </head>
     <body>
