@@ -18,3 +18,6 @@ class RecipeDetailView(DetailView):
     model = Recipe
     template_name = 'recipes/detail.html'
 
+def records(request):
+
+    return render(request, 'recipes/search.html')

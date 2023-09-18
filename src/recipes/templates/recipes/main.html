@@ -19,6 +19,14 @@
         
     </head>
     <body>
+        <br>
+        <div>
+            <a href="{%url 'recipes:search' %}" class="logout_btn">Display Recipe Data</a>
+        </div>
+        <br><br>
+        <div>
+            <a href="{%url 'logout' %}" class="logout_btn">Logout</a>
+        </div>
         <div class="recipe_grid">
             {% for object in object_list %}
             <div class="grid_item">
