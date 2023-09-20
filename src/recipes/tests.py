@@ -1,6 +1,6 @@
 from django.test import TestCase
 from .models import Recipe
-#from .forms import RecipesSearchForm
+from .forms import RecipesSearchForm
 
 # Create your tests here.
 
@@ -36,7 +36,7 @@ class RecipeModelTest(TestCase):
 
 
 
-'''class RecipesSearchFormTest(TestCase):
+class RecipesSearchFormTest(TestCase):
     def test_form_renders_recipe_diff_input(self):
         form = RecipesSearchForm()
         self.assertIn('recipe_diff', form.as_p())
@@ -50,5 +50,5 @@ class RecipeModelTest(TestCase):
     def test_form_invalid_data(self):
         form = RecipesSearchForm(data={'recipe_diff': '', 'chart_type': ''})
         self.assertFalse(form.is_valid())
-'''
+
 
