@@ -26,15 +26,17 @@ class RecipeDetailView(LoginRequiredMixin, DetailView):
 
 @login_required
 def records(request):
-    form = RecipesSearchForm(request.POST or None)
+    form = RecipesSearchForm(request.GET or None)
+    name = None
     recipe_df = None
     recipe_diff = None
     chart = None
     qs = None
 
-    if request.method == 'POST':
-        recipe_diff == request.POST.get('recipe_diff')
-        chart_type = request.POST.get('chart_type')
+    if form.is_valid():
+        name = form.cleaned_data.get('recipe_name')
+        recipe_diff = form.cleaned_data.get('recipe_diff')
+        chart_type = form.cleaned_data.get('chart_type')
 
         if recipe_diff == '#1':
             recipe_diff = 'Easy'
@@ -56,7 +58,7 @@ def records(request):
 
         if qs:
             recipe_df = pd.DataFrame(qs.values())
-            recipe_df['name'] = recipe_df['name'.apply(get_recipename_from_id)]
+            recipe_df['name'] = recipe_df['name'].apply(get_recipename_from_id)
             chart = get_chart(chart_type, recipe_df, 
                               labels=recipe_df['name'].values)
             
@@ -71,4 +73,5 @@ def records(request):
         'qs': qs,
     }
 
-    return render(request, 'recipes/search.html')
+    return render(request, 'recipes/search.html', context)
+

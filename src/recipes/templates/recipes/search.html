@@ -11,7 +11,7 @@
                 body {
                     background: url("{% static 'recipes/images/home_background.jpg' %}") no-repeat fixed;
                     background-size: cover;
-                    color: black;
+                    color: white;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
@@ -28,7 +28,7 @@
 
         <h1 style="font-size: 45px">Search for recipes in our database</h1>
         <hr>
-        <form action="" method="POST" class="form_data">
+        <form action="" method="GET" class="form_data">
             {% csrf_token %}
             {{form}}
             <button type="submit">Search</button>
