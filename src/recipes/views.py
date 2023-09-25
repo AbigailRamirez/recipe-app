@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 
 from .forms import RecipesSearchForm
 import pandas as pd
-from .utils import get_recipename_from_id, get_chart
+from .utils import get_chart
 
 
 # Create your views here.
@@ -58,7 +58,6 @@ def records(request):
 
         if qs:
             recipe_df = pd.DataFrame(qs.values())
-            recipe_df['name'] = recipe_df['name'].apply(get_recipename_from_id)
             chart = get_chart(chart_type, recipe_df, 
                               labels=recipe_df['name'].values)
             

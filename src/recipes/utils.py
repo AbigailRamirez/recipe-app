@@ -3,9 +3,7 @@ from io import BytesIO
 import base64
 import matplotlib.pyplot as plt
 
-def get_recipename_from_id(val):
-    recipename = Recipe.objects.get(id=val)
-    return recipename
+
 
 
 def get_graph():
