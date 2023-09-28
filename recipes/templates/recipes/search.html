@@ -25,7 +25,31 @@
                 }
             </style>
         </head>
-
+        <div class="nav-bar">
+            <img id="logo" src="{% static 'recipes/images/Recipe App-logos_transparent.png' %}" height="100px" width="150px">
+            <div class="search_box">
+                <form action="" method="GET" class="form">
+                    {% csrf_token %}
+                    <input type="text" name="recipe_search" class="form_search_input" id="searchbar"
+                        placeholder="Search Recipes" onkeyup="search_recipe()" />
+                </form>
+                <br>
+                <div class="search_results" autocomplete="off" style="display: none;">
+                    {% for object in object_list %}
+                    <p class="recipe_searched">
+                        <a class="recipe_name"
+                            style="font-size: 18px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"
+                            href="{{object.get_absolute_url}}"> {{object.name}} </a>
+                    </p>
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <div>
+                <a href="{%url 'recipes:list' %}" class="logout_btn">Home</a>
+                <a href="{%url 'logout' %}" class="logout_btn">Logout</a>
+            </div>
+        </div>
         <h1 style="font-size: 45px">Search for recipes in our database</h1>
         <hr>
         <form action="" method="GET" class="form_data">
