@@ -1,6 +1,6 @@
 # Recipe App
 
-* this application is made with Python using the Django Framework
-* The purpose of this application is to be able to use CRUD within a database full of recipes.
-* This is a part of my python specialization course at CareerFoundry.
+This web application is built by Python using the Django framework. It's a fully fledged app with an admin panel to perform CRUD operations on the database and letting users sign up and create their own content.
+
+Using this app, users are able to create and modify recipes containing ingredients, cooking time, and a difficulty parameter automatically calculated by the application within their registered accounts. Users are also able to search recipes by name.
  
