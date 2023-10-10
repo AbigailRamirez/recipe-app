@@ -34,7 +34,7 @@ if not IS_HEROKU:
     DEBUG = True
 
 if IS_HEROKU:
-    DEBUG = True
+    DEBUG = False
 
 if IS_HEROKU:
     ALLOWED_HOSTS = ['*']
